@@ -49,31 +49,28 @@ import FocusInput from './components/Day19/FocusInput';
 function App() {
   return (    
     <div className="App">
-      {/* <PostForm /> */}
-
-      <ForwardRefParentInput />
-
-      {/* <FocusInput /> */}
+    <Router>
+        <div className="App">
+          <nav>
+            <ul className="topnav">
+              <Link to="/">All Customers</Link>
+              <Link to="/edit-customer">Edit Customer</Link>
+              <Link to="/add-customer">Add Customer</Link>
+              <Link to="/fragment">Fragment Demo</Link>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/" exact component={Customerslist} />
+            <Route path="/edit-customer/:id" component={EditUser} />
+            <Route path="/add-customer" component={PostForm} />
+            <Route path="/fragment" component={FragmentDemo} />
+          </Switch>
+        </div>
+    </Router>
+      
     </div>
 
-    // <Router>
-    // <div className="App">
-    //   <nav>
-    //     <ul className="topnav">
-    //       <Link to="/">All Customers</Link>
-    //       <Link to="/edit-customer">Edit Customer</Link>
-    //       <Link to="/add-customer">Add Customer</Link>
-    //       <Link to="/fragment">Fragment Demo</Link>
-    //     </ul>
-    //   </nav>
-    //   <Switch>
-    //     <Route path="/" exact component={Customerslist} />
-    //     <Route path="/edit-customer/:id" component={EditUser} />
-    //     <Route path="/add-customer" component={PostForm} />
-    //     <Route path="/fragment" component={FragmentDemo} />
-    //   </Switch>
-    // </div>
-    // </Router>
+    
 
      /*{ <ErrorBoundary> 
         <Hero heroName="Batman" />
@@ -127,6 +124,12 @@ function App() {
 
       //{/* <IntervalHookCounter></IntervalHookCounter> */}
       //<DataFetching />
+
+      // {/* <PostForm /> */}
+
+      // <ForwardRefParentInput />
+
+      // {/* <FocusInput /> */}
   );
 }
 

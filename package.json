@@ -1,0 +1,26 @@
+{
+  "name": "react-course",
+  "version": "1.0.0",
+  "description": "MERN course",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "npm run-scripts test",
+    "install-client": "cd frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "cd backend && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakjagyasi/React-course.git"
+  },
+  "author": "Deepak Jagyasi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakjagyasi/React-course/issues"
+  },
+  "homepage": "https://github.com/deepakjagyasi/React-course#readme",
+  "dependencies": {
+    "heroku": "^7.52.0"
+  }
+}
