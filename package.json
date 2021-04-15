@@ -7,7 +7,7 @@
     "test": "npm run-scripts test",
     "install-client": "cd frontend && npm install",
     "build": "cd frontend && npm run build",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build && npm install && node server.js",
     "start": "npm run install-client && cd ../backend && npm install && node server.js"
   },
   "repository": {
