@@ -28,7 +28,7 @@ import HookCounter2 from './components/Day10/HookCounter2';
 import ParentComponent1 from './components/Day11/ParentComponent1';
 import HookCounter3 from './components/Day10/HookCounter3';
 import HookCounter4 from './components/Day10/HookCounter4';
-import UserContext, { UserProvider } from './components/Day12/UserContext';
+// import UserContext, { UserProvider } from './components/Day12/UserContext';
 import PureComp from './components/Day11/PureComp';
 import RegComp from './components/Day11/RegComp';
 import PortalDemo from './components/Day13/PortalDemo';
@@ -45,29 +45,24 @@ import IntervalHookCounter from './components/Day17/IntervalHookCounter';
 import DataFetching from './components/Day18/DataFetching';
 import ForwardRefParentInput from './components/Day19/ForwardRefParentInput';
 import FocusInput from './components/Day19/FocusInput';
+import ComponentA from './components/Day20/ComponentA';
+import React from 'react';
+import CounterUseReducer from './components/Day20/CounterUseReducer';
+
+export const UserContext = React.createContext()
+export const CourseContext = React.createContext()
 
 function App() {
   return (    
     <div className="App">
-    <Router>
-        <div className="App">
-          <nav>
-            <ul className="topnav">
-              <Link to="/">All Customers</Link>
-              <Link to="/edit-customer">Edit Customer</Link>
-              <Link to="/add-customer">Add Customer</Link>
-              <Link to="/fragment">Fragment Demo</Link>
-            </ul>
-          </nav>
-          <Switch>
-            <Route path="/" exact component={Customerslist} />
-            <Route path="/edit-customer/:id" component={EditUser} />
-            <Route path="/add-customer" component={PostForm} />
-            <Route path="/fragment" component={FragmentDemo} />
-          </Switch>
-        </div>
-    </Router>
-      
+      <UserContext.Provider value={'Deepak'}>
+        <CourseContext.Provider value={'MERN'}>
+          <ComponentA></ComponentA>
+        </CourseContext.Provider>
+      </UserContext.Provider>
+
+      <CounterUseReducer></CounterUseReducer>
+   
     </div>
 
     
@@ -130,6 +125,27 @@ function App() {
       // <ForwardRefParentInput />
 
       // {/* <FocusInput /> */}
+
+
+  //     <Router>
+  //     <div className="App">
+  //       <nav>
+  //         <ul className="topnav">
+  //           <Link to="/">All Customers</Link>
+  //           <Link to="/edit-customer">Edit Customer</Link>
+  //           <Link to="/add-customer">Add Customer</Link>
+  //           <Link to="/fragment">Fragment Demo</Link>
+  //         </ul>
+  //       </nav>
+  //       <Switch>
+  //         <Route path="/" exact component={Customerslist} />
+  //         <Route path="/edit-customer/:id" component={EditUser} />
+  //         <Route path="/add-customer" component={PostForm} />
+  //         <Route path="/fragment" component={FragmentDemo} />
+  //       </Switch>
+  //     </div>
+  // </Router>
+    
   );
 }
 

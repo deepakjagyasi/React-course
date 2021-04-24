@@ -7,7 +7,7 @@
     "test": "npm run-scripts test",
     "install-client": "cd frontend && npm install",
     "build": "cd frontend && npm run build",
-    "heroku-postbuild": "npm run install-client && npm run build && cd ../backend && npm install && node server.js",
+    "heroku-postbuild": "npm run install-client && npm run build && npm install && node server.js",
     "start": "npm run install-client && cd ../backend && npm install && node server.js"
   },
   "repository": {
@@ -21,8 +21,13 @@
   },
   "homepage": "https://github.com/deepakjagyasi/React-course#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "heroku": "^7.52.0",
+    "mongoose": "^5.12.5",
     "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }
