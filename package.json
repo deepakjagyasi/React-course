@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "MERN course",
   "main": "backend/server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "npm run-scripts test",
     "build": "cd frontend && npm install && react-scripts build",
