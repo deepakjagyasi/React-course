@@ -5,10 +5,9 @@
   "main": "backend/server.js",
   "scripts": {
     "test": "npm run-scripts test",
-    "install-client": "cd frontend && npm install",
-    "build": "cd frontend && npm run build",
-    "heroku-postbuild": "npm run install-client && npm run build && npm install && node server.js",
-    "start": "npm run install-client && cd ../backend && npm install && node server.js"
+    "build": "cd frontend && react-scripts build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build && node server.js",
+    "start": "npm install && npm run build && node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,11 +20,14 @@
   },
   "homepage": "https://github.com/deepakjagyasi/React-course#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "heroku": "^7.52.0",
     "mongoose": "^5.12.5",
-    "react-router-dom": "^5.2.0"
+    "react": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3"
   },
   "devDependencies": {
     "cors": "^2.8.5"

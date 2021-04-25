@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
+const path = require('path');
 
 var cors = require('cors')
 app.use(cors())
 app.use(express.json());
 
-app.use(express.static('../frontend/build'))
+
 
 //const uri = 'mongodb://localhost:27017/customers';
 //# ATLAS_URI=mongodb://localhost:27017/customers
@@ -21,9 +22,15 @@ connection.once('open', () => {
 const customerRouter = require('./routes/customers');
 app.use('/customers', customerRouter);
 
-app.get('/', (req, res) => {
-    res.send('Crud application');
-})
+// app.get('/', (req, res) => {
+//     res.send('Crud application');
+// })
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('frontend/build'))
+    app.get('*', (req, resp)=>{
+        resp.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
 
 app.listen(port, ()=> {
     console.log(`server is running on port ${port}`);
