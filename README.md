@@ -11,7 +11,6 @@ Step 2: Start the mongo client using below command:
         With use of Mongo Atlas now this step is obsolete as we will be using Atlas URL and user
         
 Step 3: Start the node server
-        > cd backend
         > node server
         
         
