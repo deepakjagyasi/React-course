@@ -18,7 +18,6 @@ export class PostForm extends Component {
     }
     
     changeHandler = e => {
-        alert(this.inputRef.current.value)
         this.setState({ [e.target.name]: e.target.value })
     }
     submitHandler = e => {

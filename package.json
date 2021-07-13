@@ -10,7 +10,7 @@
     "test": "npm run-scripts test",
     "build": "cd frontend && npm install && react-scripts build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build && node server.js",
-    "start": "npm install && npm run build && node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

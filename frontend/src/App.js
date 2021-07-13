@@ -12,15 +12,15 @@ import './App.css';
 // import NameList from './components/Day4/NameList';
 // import Form from './components/Day5/Form';
 // import PostList from './components/Day6/PostList';
-// import PostForm from './components/Day6/PostForm';
+import PostForm from './components/Day6/PostForm';
 // import LifecycleA from './components/Day6/LifecycleA';
-// import {Route, Switch, Link, BrowserRouter as Router} from 'react-router-dom'
+import {Route, Switch, Link, BrowserRouter as Router} from 'react-router-dom'
 // import About from './components/Day7/About';
 // import Shop from './components/Day7/Shop';
 // import Contact from './components/Day7/Contact';
-// import Customerslist from './components/Day8/Customerslist';
-// import EditUser from './components/Day9/EditUser';
-// import FragmentDemo from './components/Day9/FragmentDemo.js';
+import Customerslist from './components/Day8/Customerslist';
+import EditUser from './components/Day9/EditUser';
+import FragmentDemo from './components/Day9/FragmentDemo.js';
 // import Hero from './components/Day10/Hero';
 // import ErrorBoundary from './components/Day10/ErrorBoundary';
 // import HookCounter from './components/Day10/HookCounter';
@@ -45,9 +45,9 @@ import './App.css';
 // import DataFetching from './components/Day18/DataFetching';
 // import ForwardRefParentInput from './components/Day19/ForwardRefParentInput';
 // import FocusInput from './components/Day19/FocusInput';
-// import ComponentA from './components/Day20/ComponentA';
+import ComponentA from './components/Day20/ComponentA';
 import React from 'react';
-// import CounterUseReducer from './components/Day20/CounterUseReducer';
+import CounterUseReducer from './components/Day20/CounterUseReducer';
 
 export const UserContext = React.createContext()
 export const CourseContext = React.createContext()
@@ -55,13 +55,24 @@ export const CourseContext = React.createContext()
 function App() {
   return (    
     <div className="App">
-      <UserContext.Provider value={'Deepak'}>
-        <CourseContext.Provider value={'MERN'}>
-          <ComponentA></ComponentA>
-        </CourseContext.Provider>
-      </UserContext.Provider>
-
-      <CounterUseReducer></CounterUseReducer>
+      <Router>
+        <div className="App">
+          <nav>
+            <ul className="topnav">
+              <Link to="/">All Customers</Link>
+              <Link to="/edit-customer">Edit Customer</Link>
+              <Link to="/add-customer">Add Customer</Link>
+              <Link to="/fragment">Fragment Demo</Link>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/" exact component={Customerslist} />
+            <Route path="/edit-customer/:id" component={EditUser} />
+            <Route path="/add-customer" component={PostForm} />
+            <Route path="/fragment" component={FragmentDemo} />
+          </Switch>
+        </div>
+    </Router>
    
     </div>
 
@@ -126,25 +137,14 @@ function App() {
 
       // {/* <FocusInput /> */}
 
+      /* <UserContext.Provider value={'Deepak'}>
+        <CourseContext.Provider value={'MERN'}>
+          <ComponentA></ComponentA>
+        </CourseContext.Provider>
+      </UserContext.Provider>
 
-  //     <Router>
-  //     <div className="App">
-  //       <nav>
-  //         <ul className="topnav">
-  //           <Link to="/">All Customers</Link>
-  //           <Link to="/edit-customer">Edit Customer</Link>
-  //           <Link to="/add-customer">Add Customer</Link>
-  //           <Link to="/fragment">Fragment Demo</Link>
-  //         </ul>
-  //       </nav>
-  //       <Switch>
-  //         <Route path="/" exact component={Customerslist} />
-  //         <Route path="/edit-customer/:id" component={EditUser} />
-  //         <Route path="/add-customer" component={PostForm} />
-  //         <Route path="/fragment" component={FragmentDemo} />
-  //       </Switch>
-  //     </div>
-  // </Router>
+      <CounterUseReducer></CounterUseReducer> */
+  
     
   );
 }
