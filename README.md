@@ -1,5 +1,5 @@
 # React-course
-React course
+React course for Beginners
 
 Run this Application in 3 simple steps
 
