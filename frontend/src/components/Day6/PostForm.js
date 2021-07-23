@@ -7,6 +7,7 @@ export class PostForm extends Component {
         this.inputRef = React.createRef()
     
         this.state = {
+             id: '',
              first_name:'',
              last_name:'',
              gender:''
@@ -32,13 +33,22 @@ export class PostForm extends Component {
         return (
             <form onSubmit={this.submitHandler}>
                 <div>
+                    <label>ID</label>
+                    <input
+                        type="text"
+                        name="id"
+                        onChange={this.changeHandler}
+                        value={this.state.id}
+                        ref = {this.inputRef}
+                    ></input>
+                </div>
+                <div>
                     <label>First Name</label>
                     <input
                         type="text"
                         name="first_name"
                         onChange={this.changeHandler}
                         value={this.state.first_name}
-                        ref = {this.inputRef}
                     ></input>
                 </div>
                 <div>

@@ -41,7 +41,7 @@ class Customerslist extends Component {
 
     renderTableData() {
         return this.state.customers.map((customer, index) => {
-           const { _id, first_name, last_name, gender } = customer //destructuring
+           const { _id, id, first_name, last_name, gender } = customer //destructuring
            
            const mypro = ["0","1","2"]
            const [value0, value1, value2] = mypro; // Array destructuring
@@ -51,6 +51,7 @@ class Customerslist extends Component {
             this.state.searchTerm.toLowerCase())){
                 return (
                     <tr key={_id}>
+                        <td>{id}</td>
                         <td>{first_name}</td>
                         <td>{last_name}</td>
                         <td>{gender}</td>
