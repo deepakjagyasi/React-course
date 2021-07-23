@@ -42,8 +42,8 @@ const getDocuments = async () => {
     try{
         const result = await customerModel
         //.find({ })
-        //.find({ $and : [ {gender: 'male'}, {"first_name" : "DEEP"} ] })
-        .find({gender: {$nin : ["Male", "tst"]}})
+        .find({ $and : [ {gender: 'male'}, {"first_name" : "DEEP"} ] })
+        //.find({gender: {$nin : ["Male", "tst"]}})
         //.select({first_name: 1})
         //.limit(1)
         //.sort({first_name : 1})
