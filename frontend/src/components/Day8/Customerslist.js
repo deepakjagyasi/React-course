@@ -41,7 +41,7 @@ class Customerslist extends Component {
 
     renderTableData() {
         return this.state.customers.map((customer, index) => {
-           const { _id, id, first_name, last_name, gender } = customer //destructuring
+           const { _id, id, first_name, last_name, gender, age } = customer //destructuring
            
            const mypro = ["0","1","2"]
            const [value0, value1, value2] = mypro; // Array destructuring
@@ -55,6 +55,7 @@ class Customerslist extends Component {
                         <td>{first_name}</td>
                         <td>{last_name}</td>
                         <td>{gender}</td>
+                        <td>{age}</td>
                         <td><button onClick={() => this.editHandler(_id)}>Edit</button></td>
                         <td><button onClick={() => this.deleteHandler(_id)}>Delete</button></td>
                     </tr>

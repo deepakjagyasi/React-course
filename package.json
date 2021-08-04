@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "heroku": "^7.52.0",
     "mongoose": "^5.12.5",
+    "redux-thunk": "^2.3.0",
     "validator": "^13.6.0"
   },
   "devDependencies": {
