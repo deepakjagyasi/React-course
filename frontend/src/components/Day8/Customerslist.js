@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux' 
+import { fetchUsers } from '../../redux'
 
 class Customerslist extends Component {
     constructor(props) {
@@ -12,12 +14,13 @@ class Customerslist extends Component {
     }
     
     componentDidMount(prevProps, prevState) {
-        axios.get('http://localhost:5000/customers')
-            .then((res)=>{
-                this.setState({customers: res.data});
-            }).catch((err)=>{
-                console.log(err);
-            })
+        // axios.get('http://localhost:5000/customers')
+        //     .then((res)=>{
+        //         this.setState({customers: res.data});
+        //     }).catch((err)=>{
+        //         console.log(err);
+        //     })
+        this.props.fetchUsers();
     }
 
     deleteHandler = id => {
@@ -40,7 +43,8 @@ class Customerslist extends Component {
     }
 
     renderTableData() {
-        return this.state.customers.map((customer, index) => {
+        //  return this.props.customers.map((customer, index) => {
+        return this.props.customers.map((customer, index) => {
            const { _id, id, first_name, last_name, gender, age } = customer //destructuring
            
            const mypro = ["0","1","2"]
@@ -88,5 +92,18 @@ class Customerslist extends Component {
     }
 }
 
-export default Customerslist
+const mapStateToProps = (state) => {
+    return {
+        customers : state.customer.users
+    }
+}
+
+const mapDispatchToProps = (dispatch) => { 
+    return {
+        fetchUsers: () => dispatch(fetchUsers())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Customerslist)
+
+//export default Customerslist
 

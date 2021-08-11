@@ -18,7 +18,7 @@ import './App.css';
 // import About from './components/Day7/About';
 // import Shop from './components/Day7/Shop';
 // import Contact from './components/Day7/Contact';
-// import Customerslist from './components/Day8/Customerslist';
+import Customerslist from './components/Day8/Customerslist';
 // import EditUser from './components/Day9/EditUser';
 // import FragmentDemo from './components/Day9/FragmentDemo.js';
 // import Hero from './components/Day10/Hero';
@@ -53,12 +53,20 @@ import React from 'react';
 // export const CourseContext = React.createContext()
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import IceCreamContainer from './components/IceCreamContainer';
+import UserContainer from './components/UserContainer';
+import CustomersContainer from './components/CustomersContainer';
 
 function App() {
   return (    
     <Provider store={store}>
       <div className="App">
-        <CakeContainer/>
+        {/* <Customerslist />
+         <CakeContainer/>
+        <IceCreamContainer /> */}
+        {/* <UserContainer /> */}
+        {/* <CustomersContainer /> */}
+        <Customerslist />
       </div>
     </Provider>
 
