@@ -2,15 +2,14 @@
   "name": "react-course",
   "version": "1.0.0",
   "description": "MERN course",
-  "main": "backend/server.js",
+  "main": "server.js",
   "engines": {
     "node": "14.x"
   },
   "scripts": {
+    "start": "concurrently \"npm run-script docker-build-client\" \"nodemon server.js\"",
     "test": "npm run-scripts test",
-    "build": "cd frontend && npm install && react-scripts build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build && node server.js",
-    "start": "node server.js"
+    "docker-build-client": "cd frontend && npm start"
   },
   "repository": {
     "type": "git",
@@ -23,14 +22,11 @@
   },
   "homepage": "https://github.com/deepakjagyasi/React-course#readme",
   "dependencies": {
-    "axios": "^0.21.1",
+    "concurrently": "^6.2.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "heroku": "^7.52.0",
     "mongoose": "^5.12.5",
-    "react": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3"
+    "nodemon": "^2.0.12"
   },
   "devDependencies": {
     "cors": "^2.8.5"

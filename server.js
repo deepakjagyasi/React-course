@@ -10,7 +10,6 @@ app.use(cors())
 app.use(express.json());
 
 
-
 //const uri = 'mongodb://localhost:27017/customers';
 //# ATLAS_URI=mongodb://localhost:27017/customers
 mongoose.connect('mongodb+srv://merncourse:password123Tech@cluster0.zedcl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});

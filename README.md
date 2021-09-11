@@ -12,5 +12,11 @@ Step 2: Start the mongo client using below command:
 Step 3: Start the node server
         > cd backend
         > node server
+
+Step 4: You may want to create a docker image of the application using below command
+        > docker build . -t mernimage
+
+Step 5: Once the image is build Run the docker image on docker using below command
+        > docker run -p 3000:3000 -p 5000:5000 mernimage
         
         
