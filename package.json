@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "MERN course",
   "main": "server.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "start": "concurrently \"npm run-script docker-build-client\" \"nodemon server.js\"",
     "test": "npm run-scripts test",
-    "docker-build-client": "cd frontend && npm start"
+    "docker-build-client": "cd frontend && npm install && npm start"
   },
   "repository": {
     "type": "git",
@@ -26,7 +23,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.5",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "cors": "^2.8.5"

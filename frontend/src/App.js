@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-//export default helps to use any name
+// export default helps to use any name
 // import Greet from './components/Day1/Greet';
 // import Welcome from './components/Day1/Welcome';
 // import Hello from './components/Day2/Hello';
@@ -12,15 +12,15 @@ import './App.css';
 // import NameList from './components/Day4/NameList';
 // import Form from './components/Day5/Form';
 // import PostList from './components/Day6/PostList';
-import PostForm from './components/Day6/PostForm';
+// import PostForm from './components/Day6/PostForm';
 // import LifecycleA from './components/Day6/LifecycleA';
-import {Route, Switch, Link, BrowserRouter as Router} from 'react-router-dom'
+// import {Route, Switch, Link, BrowserRouter as Router} from 'react-router-dom'
 // import About from './components/Day7/About';
 // import Shop from './components/Day7/Shop';
 // import Contact from './components/Day7/Contact';
 import Customerslist from './components/Day8/Customerslist';
-import EditUser from './components/Day9/EditUser';
-import FragmentDemo from './components/Day9/FragmentDemo.js';
+// import EditUser from './components/Day9/EditUser';
+// import FragmentDemo from './components/Day9/FragmentDemo.js';
 // import Hero from './components/Day10/Hero';
 // import ErrorBoundary from './components/Day10/ErrorBoundary';
 // import HookCounter from './components/Day10/HookCounter';
@@ -28,7 +28,7 @@ import FragmentDemo from './components/Day9/FragmentDemo.js';
 // import ParentComponent1 from './components/Day11/ParentComponent1';
 // import HookCounter3 from './components/Day10/HookCounter3';
 // import HookCounter4 from './components/Day10/HookCounter4';
-// // import UserContext, { UserProvider } from './components/Day12/UserContext';
+// import UserContext, { UserProvider } from './components/Day12/UserContext';
 // import PureComp from './components/Day11/PureComp';
 // import RegComp from './components/Day11/RegComp';
 // import PortalDemo from './components/Day13/PortalDemo';
@@ -45,17 +45,33 @@ import FragmentDemo from './components/Day9/FragmentDemo.js';
 // import DataFetching from './components/Day18/DataFetching';
 // import ForwardRefParentInput from './components/Day19/ForwardRefParentInput';
 // import FocusInput from './components/Day19/FocusInput';
-import ComponentA from './components/Day20/ComponentA';
+import CakeContainer from './components/CakeContainer';
+//import ComponentA from './components/Day20/ComponentA';
 import React from 'react';
-import CounterUseReducer from './components/Day20/CounterUseReducer';
-
-export const UserContext = React.createContext()
-export const CourseContext = React.createContext()
+//import CounterUseReducer from './components/Day20/CounterUseReducer';
+// export const UserContext = React.createContext()
+// export const CourseContext = React.createContext()
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import IceCreamContainer from './components/IceCreamContainer';
+import UserContainer from './components/UserContainer';
+import CustomersContainer from './components/CustomersContainer';
 
 function App() {
   return (    
-    <div className="App">
-      <Router>
+    <Provider store={store}>
+      <div className="App">
+        {/* <Customerslist />
+         <CakeContainer/>
+        <IceCreamContainer /> */}
+        {/* <UserContainer /> */}
+        {/* <CustomersContainer /> */}
+        <Customerslist />
+      </div>
+    </Provider>
+
+    /*
+       <Router>
         <div className="App">
           <nav>
             <ul className="topnav">
@@ -74,9 +90,7 @@ function App() {
         </div>
     </Router>
    
-    </div>
-
-    
+    */
 
      /*{ <ErrorBoundary> 
         <Hero heroName="Batman" />

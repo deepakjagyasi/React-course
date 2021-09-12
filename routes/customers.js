@@ -3,7 +3,9 @@ let Customer = require('../models/customer.model');
 
 router.get('/', async (req, res) => {
     try{
-        const customers = await Customer.find();
+        const customers = await Customer.find()
+        .sort({first_name:1})
+        //.limit(5);
         res.json(customers)
     } catch(err){
         res.send(err)
@@ -22,6 +24,7 @@ router.get('/:id', async (req, res) => {
 router.patch('/:id', async (req, res) => {
     try{
         const customer = await Customer.findById(req.params.id);
+        customer.id = req.body.id;
         customer.first_name = req.body.first_name;
         customer.last_name = req.body.last_name;
         customer.gender = req.body.gender;
@@ -44,6 +47,7 @@ router.delete('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const newCustomer = new Customer({
+        id: req.body.id,
         first_name : req.body.first_name,
         last_name : req.body.last_name,
         gender : req.body.gender
